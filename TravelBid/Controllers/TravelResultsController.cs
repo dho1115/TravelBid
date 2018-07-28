@@ -82,12 +82,7 @@ namespace TravelBid.Controllers
         public IActionResult NewTravelRequest(string CustomerFirstName, string CustomerLastName, string Email, string destination, double maxbudget, string additionalInfo)
         {
             //ViewData["customer"] = customername;
-            Vacationer.Add(new VacationerModel { FirstName = CustomerFirstName  });
-            Vacationer.Add(new VacationerModel { LastName = CustomerLastName });
-            Vacationer.Add(new VacationerModel { email = Email });
-            Vacationer.Add(new VacationerModel { DreamDestination = destination });
-            Vacationer.Add(new VacationerModel { budget = maxbudget });
-            Vacationer.Add(new VacationerModel { DestinationDescription = additionalInfo });
+            Vacationer.Add(new VacationerModel { FirstName = CustomerFirstName, LastName = CustomerLastName, email = Email, DreamDestination = destination, budget = maxbudget, DestinationDescription = additionalInfo });            
 
             return View(Vacationer);
         }
