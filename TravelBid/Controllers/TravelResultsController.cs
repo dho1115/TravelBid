@@ -13,7 +13,7 @@ namespace TravelBid.Controllers
        {
             List<VacationSuggestions> PlacesToGo = new List<VacationSuggestions>();            
 
-            if (string.IsNullOrEmpty(BackToTravelResults))
+            if(string.IsNullOrEmpty(BackToTravelResults))//This is if the user clicks the "undecided" button. It will take him to a page with a list of ideas (and a form).
             {
                 Console.WriteLine("return current popular destinations");
 
@@ -62,17 +62,7 @@ namespace TravelBid.Controllers
                     Attractions = "Cirque Du Soleil, Comedy shows, BUFFETS!!!",
                     BestTimeToGo = "Winter"
                 });                
-            } 
-
-            else if(BackToTravelResults.ToLowerInvariant() == "Reno")
-            {
-                PlacesToGo.Add(new VacationSuggestions
-                {
-                    DestinationName = "Reno",
-                    Attractions = "Lake Tahoe, Virginia City, Skiing",
-                    BestTimeToGo = "Fall"
-                });
-            };
+            }            
             
             return View(PlacesToGo);
        }
@@ -86,6 +76,16 @@ namespace TravelBid.Controllers
 
             return View(Vacationer);
         }
-        
+
+        List<TravelAgentParameters> NewTravelAgent = new List<TravelAgentParameters>();
+
+        //Below is the method that will process the form the new agent has entered.
+
+        public IActionResult NewAgentAccount(string AgentName, string AgentEmail, int AgentExperience, string asta, string AgentSpecialties, string AgentVisited)
+        {
+            NewTravelAgent.Add(new TravelAgentParameters { name = AgentName, email = AgentEmail, ASTACertified = asta, yearsexperience = AgentExperience, Specialties = AgentSpecialties, PlacesVisited = AgentVisited });
+
+            return View(NewTravelAgent);
+        }
     }
 }

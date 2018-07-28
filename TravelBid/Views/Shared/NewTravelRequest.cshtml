@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<VacationerModel>
 
 @{
-    ViewData["Title"] = "NewTravelRequeset";
+    ViewData["Title"] = "NewTravelRequest";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,12 +10,12 @@
 
 @foreach (var item in Model)
 {
-    <h1>First Name: @item.FirstName</h1>
-    <h1>Last Name: @item.LastName</h1>
-    <h1>E-Mail: @item.email</h1>
-    <h1>Dream Destination: @item.DreamDestination</h1>
-    <h1>Your Maximum Budget: @item.budget</h1>
-    <h1>What you want in your dream Destination: @item.DestinationDescription</h1>
+    <h3>First Name: <span>@item.FirstName</span></h3>
+    <h3>Last Name: <span>@item.LastName</span></h3>
+    <h3>E-Mail: <span>@item.email</span></h3>
+    <h3>Dream Destination: <span>@item.DreamDestination</span></h3>
+    <h3>Your Maximum Budget: <span>@item.budget</span></h3>
+    <h3>What you want in your dream Destination: <span>@item.DestinationDescription</span></h3>
 } 
 
 <button>Submit my request to agents!!!</button>
