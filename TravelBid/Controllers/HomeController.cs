@@ -32,7 +32,17 @@ namespace TravelBid.Controllers
         public IActionResult NewAgentAccount()
         {
             return View();
+        } 
+
+        public IActionResult NewAgentQuestionairre()
+        {
+            return View();
         }
+
+        public IActionResult NewVacationerProfile()
+        {
+            return View();
+        } 
 
         public IActionResult Error()
         {
