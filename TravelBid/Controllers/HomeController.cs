@@ -27,6 +27,11 @@ namespace TravelBid.Controllers
             ViewData["Message"] = "Your contact page.";
 
             return View();
+        } 
+
+        public IActionResult NewAgentAccount()
+        {
+            return View();
         }
 
         public IActionResult Error()
