@@ -2,6 +2,45 @@
     ViewData["Title"] = "Home Page";
 }
 
+<div class="col-lg-6 left">
+    <h1>Vacationers</h1>
+    <h3>LOGIN</h3>
+    <h3>New to TravelBid? Welcome!</h3> 
+    <h3>Please REGISTER to start the bidding process.</h3>
+    <h3><a asp-controller="TravelResults" asp-action="index" asp-route-category="BackToTravelResults"><strong>Undecided on a vacation spot?</strong></a></h3>
+</div>
+
+<div class="col-lg-6 right">
+    <h1>Travel Agents</h1>
+    <h3>LOGIN</h3>
+    <h3>REGISTER</h3>
+</div>
+
+<style type="text/css">
+    .container {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .left {
+        background-color: #d3ffce;
+        margin: 3% 0px;
+        padding: 0px;
+        height: 30vw;
+    }
+
+    .right {
+        margin: 3% 0px;
+        padding: 0px;
+        background-color: #ffb6c1;
+        height: 30vw;
+    }
+
+    h1, h3 {
+        text-align: center;
+    }
+</style>
+<!--
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -104,3 +143,4 @@
         </ul>
     </div>
 </div>
+-->
