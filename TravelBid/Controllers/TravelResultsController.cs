@@ -90,6 +90,11 @@ namespace TravelBid.Controllers
             NewTravelAgent.Add(new TravelAgentParameters { name = AgentName, email = AgentEmail, ASTACertified = asta, yearsexperience = AgentExperience, Specialties = AgentSpecialties, PlacesVisited = AgentVisited });
 
             return View(NewTravelAgent);
+        } 
+
+        public IActionResult Login()
+        {
+            return View();
         }
     }
 }

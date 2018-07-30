@@ -30,7 +30,7 @@
             </div>
 
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" style="float: right">
                     <!--<li><a asp-area="" asp-controller="Home" asp-action="Index">Home (NOTE: This button is from the _ViewStart/shared/_Layout.cshtml).</a></li>-->
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
@@ -73,9 +73,13 @@
 
     @RenderSection("Scripts", required: false)
 
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Ultra|Varela+Round" rel="stylesheet">
+
     <style type="text/css">
         .title {
-            font-family: 'Lobster', cursive;
+            /*font-family: 'Lobster', cursive;*/
+            font-family: 'Dancing Script', cursive;
+            color: firebrick;
             font-size: 7vh;
             text-align: center;
         }
