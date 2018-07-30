@@ -1,8 +1,16 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: lightgray;
-    /*background-image: url("C:\Users\Owner\Desktop\Pics\Summer.jpg");*/
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: lightgray;    
+}
+
+.bck {
+    background-image: url("../images/TahoeVII.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 /* Wrapping element */

@@ -2,26 +2,27 @@
 
 @{
     ViewData["Title"] = "Index"; //This ViewData is actually used in the _Layout.cshtml under title.
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";    
+
 }
 
 @{
-    ViewData["Title"] = "Home Page";   
+    ViewData["Title"] = "Home Page";
 
 }
 
 <h1 style="text-align: center; color: red">STILL NOT SURE WHERE TO GO?</h1>
 <h3 style="text-align: center">Here are some top picks chosed by our travel agents...</h3>
 
-@foreach(var suggesteddestination in Model)
-{
+@foreach (var suggesteddestination in Model)
+{     
     <h3>DESTINATION: @suggesteddestination.DestinationName</h3>
     <h3>POPULAR ATTRACTIONS: @suggesteddestination.Attractions</h3>
     <h3>BEST TIME TO GO: @suggesteddestination.BestTimeToGo</h3>
     <hr />
 }
 
-<h1>If you're interested in going to these (or any other place you have in mind), please fill out these forms right now!</h1>
+<h1>DON'T WAIT! Fill out the form below to have our awesome agents bid on these vacations for you (or any others you have in mind)!</h1>
 <!--
 <form method="post" action="/TravelResults/NewTravelRequest">
     <label for="customer">Enter your name</label><input name="customername" />
@@ -30,13 +31,15 @@
     -->
 
 <form method="post" action="/TravelResults/NewTravelRequest">
-    <label for="fName">First Name</label><input type="text" name="CustomerFirstName" id="fName" required/>
-    <label for="lName">Last Name</label><input type="text" name="CustomerLastName" id="lName" required/><br />
-    <label for="email">Email:</label><input type="email" name="Email" id="email" /><br />
-    <label for="destination">Your Dream Destination:<input name="destination" id="destination" required/></label><br />
-    <label for="maxbudget">Most you are willing to pay for your Dream Destination (minimum: $150.00)?<input type ="number"name="maxbudget" id="maxbudget" min="150"/></label><br />
-    <strong>Tell our awesome agents EVERYTHING you want in your dream destination:</strong><br /><textarea name="additionalInfo"></textarea><br />
-    <input type="submit" />
+    <div class="form-group">
+        <label for="fName">First Name</label><input type="text" name="CustomerFirstName" id="fName" required />
+        <label for="lName">Last Name</label><input type="text" name="CustomerLastName" id="lName" required /><br />
+        <label for="email">Email:</label><input type="email" name="Email" id="email" /><br />
+        <label for="destination">Your Dream Destination:<input name="destination" id="destination" required /></label><br />
+        <label for="maxbudget">Most you are willing to pay for your Dream Destination (minimum: $150.00)?<input type="number" name="maxbudget" id="maxbudget" min="150" /></label><br />
+        <strong>Tell our awesome agents EVERYTHING you want in your dream destination:</strong><br /><textarea name="additionalInfo"></textarea><br />
+        <input type="submit" class="btn btn-primary" value="submit travel request"/>
+    </div>
 </form>
 
 

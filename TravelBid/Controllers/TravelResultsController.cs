@@ -10,7 +10,7 @@ namespace TravelBid.Controllers
     public class TravelResultsController : Controller
     {
        public IActionResult Index(string BackToTravelResults)
-       {
+       {            
             List<VacationSuggestions> PlacesToGo = new List<VacationSuggestions>();            
 
             if(string.IsNullOrEmpty(BackToTravelResults))//This is if the user clicks the "undecided" button. It will take him to a page with a list of ideas (and a form).
@@ -21,35 +21,37 @@ namespace TravelBid.Controllers
                 {
                     DestinationName = "Las Vegas",
                     Attractions = "Cirque Du Soleil, Comedy shows, BUFFETS!!!",
-                    BestTimeToGo = "Winter"
+                    BestTimeToGo = "Winter"                    
                 });
 
                 PlacesToGo.Add(new VacationSuggestions
                 {
                     DestinationName = "Reno",
-                    Attractions = "Lake Tahoe, Virginia City, Skiiing",
-                    BestTimeToGo = "Fall"                
+                    Attractions = "Lake Tahoe, Virginia City, Skiing",
+                    BestTimeToGo = "Fall"                  
                 });
 
                 PlacesToGo.Add(new VacationSuggestions
-                {
+                {                    
                     DestinationName = "Costa Rica",
                     Attractions = "Cloud Forest, Nightlife, Beaches",
                     BestTimeToGo = "Mid December to April"
                 });
 
                 PlacesToGo.Add(new VacationSuggestions
-                {
+                {                    
                     DestinationName = "Hong Kong",
                     Attractions = "Shopping, Symphony of light dinner cruise, Hong Kong Disneyland",
-                    BestTimeToGo = "October to December"
+                    BestTimeToGo = "October to December",                    
                 });
 
                 PlacesToGo.Add(new VacationSuggestions
                 {
+                    image = "~/ images /SouthBeach.jpg",
                     DestinationName = "South Beach",
                     Attractions = "FOOD!!!, Beach, Walk down Ocean Drive",
                     BestTimeToGo = "Fall"
+
                 });
          
             } 
@@ -69,6 +71,7 @@ namespace TravelBid.Controllers
 
         List<VacationerModel> Vacationer = new List<VacationerModel>();
         
+        [HttpPost]
         public IActionResult NewTravelRequest(string CustomerFirstName, string CustomerLastName, string Email, string destination, double maxbudget, string additionalInfo)
         {
             //ViewData["customer"] = customername;
@@ -81,6 +84,7 @@ namespace TravelBid.Controllers
 
         //Below is the method that will process the form the new agent has entered.
 
+        [HttpPost]
         public IActionResult NewAgentAccount(string AgentName, string AgentEmail, int AgentExperience, string asta, string AgentSpecialties, string AgentVisited)
         {
             NewTravelAgent.Add(new TravelAgentParameters { name = AgentName, email = AgentEmail, ASTACertified = asta, yearsexperience = AgentExperience, Specialties = AgentSpecialties, PlacesVisited = AgentVisited });

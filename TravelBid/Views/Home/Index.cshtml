@@ -1,21 +1,22 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<body class="bck">
+    <div class="col-lg-6 left">
+        <h1>Vacationers</h1>
+        <h3>LOGIN</h3>
+        <h3>New to TravelBid? Welcome!</h3> 
+        <h3>Please <a asp-area="" asp-controller="Home" asp-action="NewVacationerProfile">REGISTER</a> to start the bidding process.</h3>
+        <h3><a asp-controller="TravelResults" asp-action="index" asp-route-category="BackToTravelResults"><strong>Undecided on a vacation spot?</strong></a></h3>
+    </div>
 
-<div class="col-lg-6 left">
-    <h1>Vacationers</h1>
-    <h3>LOGIN</h3>
-    <h3>New to TravelBid? Welcome!</h3> 
-    <h3>Please <a asp-area="" asp-controller="Home" asp-action="NewVacationerProfile">REGISTER</a> to start the bidding process.</h3>
-    <h3><a asp-controller="TravelResults" asp-action="index" asp-route-category="BackToTravelResults"><strong>Undecided on a vacation spot?</strong></a></h3>
-</div>
-
-<div class="col-lg-6 right">
-    <h1>Travel Agents</h1>
-    <!--<h3><a asp-area="" asp-controller="Home" asp-action="NewAgentAccount">REGISTER</a></h3>-->
-    <h3><a asp-area="" asp-controller="Home" asp-action="NewAgentQuestionairre">REGISTER</a></h3>
-    <h3>LOGIN</h3>
-</div>
+    <div class="col-lg-6 right">
+        <h1>Travel Agents</h1>
+        <!--<h3><a asp-area="" asp-controller="Home" asp-action="NewAgentAccount">REGISTER</a></h3>-->
+        <h3><a asp-area="" asp-controller="Home" asp-action="NewAgentQuestionairre">REGISTER</a></h3>
+        <h3>LOGIN</h3>
+    </div>
+</body>
 
 <style type="text/css">
     .container {
@@ -26,13 +27,13 @@
 
     .left {
         background-color: #d3ffce;
-        margin: 0% 0px;
+        margin: 5% 0%;
         padding: 0px;
         height: 30vw;
     }
 
     .right {
-        margin: 0% 0px;
+        margin: 5% 0%;
         padding: 0px;
         background-color: #ffb6c1;
         height: 30vw;

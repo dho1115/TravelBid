@@ -11,5 +11,6 @@ namespace TravelBid.Models
         public string DestinationName { get; set; }
         public string Attractions { get; set; }
         public string BestTimeToGo { get; set; }
+        public string image { get; set; }
     }
 }
