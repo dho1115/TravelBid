@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin-top: 100px">
+
+</div>
+
+<h2>Login</h2>
+
+<h3>Current Users: Login to your account.</h3>
+
+<form method="post" action="/Home/LoginProcessing">
+    <div class="form-group">
+        <label for="username">Enter Username<input type="text" id="username" name="loginname" /></label>
+        <input type="submit" class="btn btn-primary" value="Submit Order" />
+    </div>
+</form>
+
+<h3>New Users: Create username for new account.</h3>
+
+<form method="post" action="/Home/LoginProcessing">
+    <div class="form-group">
+        <label for="username">Enter Username<input type="text" id="username" name="loginname" /></label>
+        <input type="submit" class="btn btn-primary" value="Submit Order" />
+    </div>
+</form>
+

@@ -8,8 +8,9 @@ using TravelBid.Models;
 namespace TravelBid.Controllers
 {
     public class TravelResultsController : Controller
-    {
-       public IActionResult Index(string BackToTravelResults)
+    {      
+
+        public IActionResult Index(string BackToTravelResults)
        {            
             List<VacationSuggestions> PlacesToGo = new List<VacationSuggestions>();            
 
@@ -91,10 +92,6 @@ namespace TravelBid.Controllers
 
             return View(NewTravelAgent);
         } 
-
-        public IActionResult Login()
-        {
-            return View();
-        }
+        
     }
 }

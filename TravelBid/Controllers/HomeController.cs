@@ -42,7 +42,36 @@ namespace TravelBid.Controllers
         public IActionResult NewVacationerProfile()
         {
             return View();
+        }
+
+        public IActionResult Login()
+        {
+            return View();
         } 
+
+        public IActionResult AgentLoginPage()
+        {
+            return View();
+        }
+
+        public IActionResult LoginProcessing(string loginname)
+        {            
+            if(loginname == "vacationer")
+            {
+                return View();
+            }
+
+            else if(loginname == "agent")
+            {
+                return RedirectToAction("AgentLoginPage","Home");
+            }
+
+            else
+            {
+                return RedirectToAction("index","Home");
+            }
+            
+        }
 
         public IActionResult Error()
         {
