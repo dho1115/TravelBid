@@ -11,7 +11,11 @@ namespace TravelBid.Controllers
     {      
 
         public IActionResult Index(string BackToTravelResults)
-       {            
+       {
+            //Notice below the data is "Hard coded" (Las Vegas, Comedy shows, etc...). What if I ran a SELECT... FROM. I need to open a connection, run a query and convert it.
+
+            //GO TO NUGET.
+
             List<VacationSuggestions> PlacesToGo = new List<VacationSuggestions>();            
 
             if(string.IsNullOrEmpty(BackToTravelResults))//This is if the user clicks the "undecided" button. It will take him to a page with a list of ideas (and a form).
@@ -59,8 +63,11 @@ namespace TravelBid.Controllers
 
             else if(BackToTravelResults.ToLowerInvariant() == "Las Vegas")
             {
+                //Notice below the data is "Hard coded" (Las Vegas, Comedy shows, etc...). What if I ran a SELECT... FROM. I need to open a connection, run a query and convert it.
+
                 PlacesToGo.Add(new VacationSuggestions
                 {
+                    ID = 1, //I just added this.
                     DestinationName = "Las Vegas",
                     Attractions = "Cirque Du Soleil, Comedy shows, BUFFETS!!!",
                     BestTimeToGo = "Winter"
