@@ -1,0 +1,69 @@
+﻿@model TravelBid.Models.TravelAgentParameters
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TravelAgentParameters</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.yearsexperience)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.yearsexperience)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ASTACertified)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ASTACertified)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Specialties)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Specialties)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PlacesVisited)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PlacesVisited)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateLastModified)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateLastModified)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

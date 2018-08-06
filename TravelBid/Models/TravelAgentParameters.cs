@@ -14,5 +14,8 @@ namespace TravelBid.Models
         public string Specialties { get; set; }
         public string PlacesVisited { get; set; }
         public string email { get; set; }
+
+        public DateTime? DateCreated { get; set; }
+        public DateTime? DateLastModified { get; set; }
     }
 }

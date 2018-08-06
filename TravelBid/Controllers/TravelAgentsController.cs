@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TravelBid.Models;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace TravelBid.Controllers
 {

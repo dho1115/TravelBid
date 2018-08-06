@@ -1,0 +1,66 @@
+﻿@model TravelBid.Models.TravelAgentParameters
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TravelAgentParameters</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.yearsexperience)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.yearsexperience)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ASTACertified)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ASTACertified)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Specialties)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Specialties)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PlacesVisited)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PlacesVisited)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateLastModified)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateLastModified)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

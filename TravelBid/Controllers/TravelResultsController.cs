@@ -85,6 +85,7 @@ namespace TravelBid.Controllers
         }
 
         [HttpPost]
+        /*
         public IActionResult NewTravelRequest(string CustomerFirstName, string CustomerLastName, string Email, string destination, double maxbudget, string additionalInfo)
         {
             List<VacationerModel> Vacationer = new List<VacationerModel>();
@@ -92,6 +93,16 @@ namespace TravelBid.Controllers
             Vacationer.Add(new VacationerModel { FirstName = CustomerFirstName, LastName = CustomerLastName, email = Email, DreamDestination = destination, budget = maxbudget, DestinationDescription = additionalInfo });
 
             return View(Vacationer);
+        } 
+        */
+
+        public IActionResult NewTravelRequest()
+        {
+            List<VacationDetails> newvacationDetails = new List<VacationDetails>();
+
+            newvacationDetails.Add(new VacationDetails { id = 1, DreamDestination = "Texas", DestinationDescription = "Looking to go to Texas.", budget = 2300.00 });
+
+            return View(newvacationDetails);
         }
 
         List<TravelAgentParameters> NewTravelAgent = new List<TravelAgentParameters>();

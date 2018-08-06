@@ -1,0 +1,41 @@
+﻿@model TravelBid.Models.VacationDetails
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<h4>VacationDetails</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DreamDestination" class="control-label"></label>
+                <input asp-for="DreamDestination" class="form-control" />
+                <span asp-validation-for="DreamDestination" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DestinationDescription" class="control-label"></label>
+                <input asp-for="DestinationDescription" class="form-control" />
+                <span asp-validation-for="DestinationDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="budget" class="control-label"></label>
+                <input asp-for="budget" class="form-control" />
+                <span asp-validation-for="budget" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

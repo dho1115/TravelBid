@@ -1,0 +1,66 @@
+﻿@model TravelBid.Models.TravelAgentParameters
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>TravelAgentParameters</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="yearsexperience" class="control-label"></label>
+                <input asp-for="yearsexperience" class="form-control" />
+                <span asp-validation-for="yearsexperience" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ASTACertified" class="control-label"></label>
+                <input asp-for="ASTACertified" class="form-control" />
+                <span asp-validation-for="ASTACertified" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Specialties" class="control-label"></label>
+                <input asp-for="Specialties" class="form-control" />
+                <span asp-validation-for="Specialties" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlacesVisited" class="control-label"></label>
+                <input asp-for="PlacesVisited" class="form-control" />
+                <span asp-validation-for="PlacesVisited" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateCreated" class="control-label"></label>
+                <input asp-for="DateCreated" class="form-control" />
+                <span asp-validation-for="DateCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateLastModified" class="control-label"></label>
+                <input asp-for="DateLastModified" class="form-control" />
+                <span asp-validation-for="DateLastModified" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

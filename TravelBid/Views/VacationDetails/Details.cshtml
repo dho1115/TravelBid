@@ -1,0 +1,37 @@
+﻿@model TravelBid.Models.VacationDetails
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VacationDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DreamDestination)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DreamDestination)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinationDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DestinationDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.budget)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.budget)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
