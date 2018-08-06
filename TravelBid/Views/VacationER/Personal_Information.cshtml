@@ -1,0 +1,74 @@
+﻿@model IEnumerable<VacationerModel>
+
+@{
+    ViewData["Title"] = "Personal_Information";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="height: 7vw"></div>
+
+<a asp-controller="VacationER" asp-action="LoginHome" asp-category-loginname="vacationer">Login Home Page</a>
+
+<h2>Personal Information</h2>
+
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-lg-6">
+                FIRST NAME:
+            </div>
+            <div class="col-lg-6">
+                @item.FirstName
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                LAST NAME:
+            </div>
+            <div class="col-lg-6">
+                @item.LastName
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                E-MAIL:
+            </div>
+            <div class="col-lg-6">
+                @item.email
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                MAXIMUM BUDGET:
+            </div>
+            <div class="col-lg-6">
+                @item.budget
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                DREAM DESTINATION:
+            </div>
+            <div class="col-lg-6">
+                @item.DreamDestination
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                DESTINATION DESCRIPTION:
+            </div>
+            <div class="col-lg-6">
+                @item.DestinationDescription
+            </div>
+        </div>
+    }
+</div>
+
+
+

@@ -1,8 +1,28 @@
-﻿
+﻿@model IEnumerable<TravelAgentParameters>
+
+
 @{
     ViewData["Title"] = "NewAgentAccount";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div style="height: 7vw">
 
-<h2>New Agent Account</h2>
+</div>
 
+<h2>Please Verify that the Information Below is Correct.</h2>
+
+@foreach (var value in Model)
+{
+    <form method="post" action="/TravelAgents/ProfessionalInformation">
+        <label for="name">Name: </label><input type="text" name="AgentName" id="name" value="@value.name" required /><br />
+        <label for="experience">Years Experience in the Industry: </label><input type="text" name="AgentExperience" id="experience" value="@value.yearsexperience" /><br />
+        <label for="email">Email</label><input type="email" name="AgentEmail" id="email" value="@value.email" /><br />
+        Are you ASTA certified?
+        <label><input type="radio" name="asta" value="YES" id="ASTACertified"/><span>Yes</span></label>
+        <label><input type="radio" name="asta" value="NO" id="ASTACertified"/><span>No</span></label><br />
+        <label for="specialties">Vacation specialties: </label><input type="text" name="AgentSpecialties" id="speciaties" value="@value.Specialties"/>
+        <label for="visited">Places you have travelled to: <input type="text" name="AgentVisited" id="visited" value="@value.PlacesVisited"/></label>
+
+        <input type="submit" />
+    </form>
+}

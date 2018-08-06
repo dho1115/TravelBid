@@ -1,0 +1,13 @@
+﻿@model TravelBid.Models.VacationerModel
+
+
+@{
+    ViewData["Title"] = "LoginHome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="height: 7vw"></div>
+
+<a asp-controller="VacationER" asp-action="Personal_Information">Personal Information</a>
+
+<h2>Welcome, @ViewBag.name, to your new Login Home page!</h2>

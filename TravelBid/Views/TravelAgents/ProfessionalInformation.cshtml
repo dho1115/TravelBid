@@ -1,0 +1,73 @@
+﻿@model IEnumerable<TravelAgentParameters>
+
+
+@{
+    ViewData["Title"] = "ProfessionalInformation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="height: 7vw"></div>
+
+<a asp-controller="TravelAgents" asp-action="LoginHome">Your Login Page</a>
+
+<h2>Professional Information</h2>
+
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-lg-6">
+                NAME:
+            </div>
+            <div class="col-lg-6">
+                @item.name
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                E-MAIL:
+            </div>
+            <div class="col-lg-6">
+                @item.email
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                ASTA CERTIFIED:
+            </div>
+            <div class="col-lg-6">
+                @item.ASTACertified
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                SPECIALTIES:
+            </div>
+            <div class="col-lg-6">
+                @item.Specialties
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                YEARS EXPERIENCE:
+            </div>
+            <div class="col-lg-6">
+                @item.yearsexperience
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                PLACES VISITED:
+            </div>
+            <div class="col-lg-6">
+                @item.PlacesVisited
+            </div>
+        </div>
+    }
+</div>
+    

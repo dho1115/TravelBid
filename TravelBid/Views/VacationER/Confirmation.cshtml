@@ -1,0 +1,25 @@
+﻿@model IEnumerable<VacationerModel>
+
+@{
+    ViewData["Title"] = "Confirmation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="height: 7vw"></div>
+
+<h2>Registration Confirmation</h2>
+
+@foreach(var item in Model)
+{
+<form method="post" action="/VacationER/Personal_Information">
+    <div class="form-group">
+        <label for="fName">First Name</label><input type="text" name="CustomerFirstName" id="fName" value="@item.FirstName" required />
+        <label for="lName">Last Name</label><input type="text" name="CustomerLastName" id="lName" value="@item.LastName" required /><br />
+        <label for="email">Email:</label><input type="email" name="Email" id="email" value="@item.email" /><br />
+        <label for="destination">Your Dream Destination:<input name="destination" id="destination" value="@item.DreamDestination" required /></label><br />
+        <label for="maxbudget">Most you are willing to pay for your Dream Destination (minimum: $150.00)?<input type="number" name="maxbudget" id="maxbudget" min="150" value="@item.budget"/></label><br />
+        <strong>Tell our awesome agents EVERYTHING you want in your dream destination:</strong><br /><textarea name="additionalInfo">@item.DestinationDescription</textarea><br />
+        <input type="submit" value="submit my dream request!!!"/>
+    </div>
+</form>
+}

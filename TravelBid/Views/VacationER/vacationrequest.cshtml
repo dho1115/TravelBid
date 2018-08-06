@@ -1,0 +1,15 @@
+﻿@model IEnumerable<CombinedInfoVacationer>
+@{
+    ViewData["Title"] = "vacationrequest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="height: 10vw"></div>
+<h2>vacationrequest</h2>
+
+@foreach (var item in Model)
+{
+    <h3>@item.Traveler.FirstName</h3>
+    <h3>@item.Traveler.LastName</h3>
+    <h3>@item.vacationdetails.DreamDestination</h3>
+}
+

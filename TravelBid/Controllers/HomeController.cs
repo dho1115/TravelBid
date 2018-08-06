@@ -11,7 +11,14 @@ namespace TravelBid.Controllers
     public class HomeController : Controller
     {
         public IActionResult Index()
-        {
+        {   
+            /*
+            string filePath = "C:\\Users\\Owner\\Desktop\\TravelBidVacations.doc";
+            string filecontents = "VACATION REQUESTS..." + "\n\n\n";
+
+            System.IO.File.WriteAllText(filePath, filecontents);
+            */
+
             return View();
         }
 
@@ -54,25 +61,21 @@ namespace TravelBid.Controllers
             return View();
         }
 
+        /*
         public IActionResult LoginProcessing(string loginname)
         {            
             if(loginname == "vacationer")
             {
                 return View();
             }
-
-            else if(loginname == "agent")
-            {
-                return RedirectToAction("AgentLoginPage","Home");
-            }
-
+            
             else
             {
                 return RedirectToAction("index","Home");
             }
             
         }
-
+        */
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

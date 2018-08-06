@@ -5,16 +5,18 @@
 <body class="bck">
     <div class="col-lg-6 left">
         <h1>Vacationers</h1>
-        <!--<h3><a asp-area="" asp-controller="Home" asp-action="Login">LOGIN</a></h3>-->
+        <!--LOGIN for Vacationers-->
         <div align="center">
-            <form method="post" action="/Home/LoginProcessing" style="display: inline-block">
+            <form method="post" action="/VacationER/LoginHome" style="display: inline-block">
                 <div class="form-group">
-                    <label for="username"><input type="text" id="username" name="loginname" placeholder="Login to your profile page" min="3"/></label><br />
+                    <label for="username"><input type="text" id="username" name="loginname" value="" placeholder="Login to your profile page" min="3"/></label><br />
                     <input type="submit" class="btn btn-primary" />
                 </div>
             </form>
+
+            <!--REGISTRATION for new Vacationers-->
                 <h3>New to TravelBid? Welcome!</h3>
-                <h3>Please <a asp-area="" asp-controller="Home" asp-action="NewVacationerProfile">REGISTER</a> to start the bidding process.</h3>
+                <h3>Please <a asp-area="" asp-controller="VacationER" asp-action="NewVacationerRegistration">REGISTER</a> to start the bidding process.</h3>
                 <h3><a asp-controller="TravelResults" asp-action="index" asp-route-category="BackToTravelResults"><strong>Undecided on a vacation spot?</strong></a></h3>
         </div>
     </div>
@@ -23,9 +25,11 @@
         <h1>Travel Agents</h1>
         <!--<h3><a asp-area="" asp-controller="Home" asp-action="NewAgentAccount">REGISTER</a></h3>-->
         <h3><a asp-area="" asp-controller="Home" asp-action="NewAgentQuestionairre">REGISTER</a></h3>
+
         <br />
+
         <div align="center">
-            <form method="post" action="/Home/LoginProcessing" style="display: inline-block">
+            <form method="post" action="/TravelAgents/LoginHome" style="display: inline-block">
                 <div class="form-group">
                     <label for="username"><input type="text" id="username" name="loginname" placeholder="Login to your profile page" min="3"/></label><br />
                     <input type="submit" class="btn btn-primary" />
