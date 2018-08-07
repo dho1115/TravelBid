@@ -73,11 +73,11 @@ namespace TravelBid.Controllers
 
             VacationerProfile.Add(new VacationerModel
             {
-                FirstName = "Jamie",
-                LastName = "Smythe",
-                email = "jse@email.com",
-                DreamDestination = "Texas",
-                DestinationDescription = "Looking to go to Texas.",
+                FirstName = "Andie",
+                LastName = "Richards",
+                email = "Andie@email.com",
+                DreamDestination = "Boston,Ma",
+                DestinationDescription = "Looking for an agent to help plan my Boston trip",
                 budget = 2900.00
             });
 

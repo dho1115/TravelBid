@@ -11,9 +11,10 @@ using TravelBid.Data;
 namespace TravelBid.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180807133411_VacationerModel")]
+    partial class VacationerModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -177,20 +178,6 @@ namespace TravelBid.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("TravelBid.Models.DestinationRequest", b =>
-                {
-                    b.Property<string>("name")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime?>("DateCreated");
-
-                    b.Property<DateTime?>("DateModified");
-
-                    b.HasKey("name");
-
-                    b.ToTable("DestinationRequests");
                 });
 
             modelBuilder.Entity("TravelBid.Models.TravelAgentParameters", b =>
