@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using TravelBid.Data;
 using TravelBid.Models;
 
 namespace TravelBid.Controllers
@@ -11,6 +12,13 @@ namespace TravelBid.Controllers
     public class TravelResultsController : Controller
     {
         //SIDE NOTE: For now (8/2/18 @ 11:36am), we will ENTER the results via a SQL Query Server(new query) and then retrieve it via the "While" code below.
+
+        private ApplicationDbContext _context;
+
+        public TravelResultsController(ApplicationDbContext context)
+        {
+            this._context = context;
+        }
 
         public IActionResult Index(string BackToTravelResults)
         {
@@ -81,6 +89,23 @@ namespace TravelBid.Controllers
                 });
             }
 
+            //If the user needs vacation ideas, this should return a whole bunch of ideas (from above).
+            
+            // List<VacationSuggestions> ReturnSuggestions;
+
+            /*
+            if(string.IsNullOrEmpty(BackToTravelResults))
+            {
+                ReturnSuggestions = this._context.[Add a db of VacationSuggestions to ApplicationDBContext] .ToList(); //<= NOTE: Need to add a DB of VacationSuggestions.
+            }
+            
+            
+            else
+            {
+                ReturnSuggestions = this._context.newvacationrequest.Select(x => x.Name).ToArray();
+            }
+            */
+
             return View(PlacesToGo);
         }
 
@@ -115,7 +140,8 @@ namespace TravelBid.Controllers
             NewTravelAgent.Add(new TravelAgentParameters { name = AgentName, email = AgentEmail, ASTACertified = asta, yearsexperience = AgentExperience, Specialties = AgentSpecialties, PlacesVisited = AgentVisited });
 
             return View(NewTravelAgent);
-        }
+        } 
+                
                
     }   
 

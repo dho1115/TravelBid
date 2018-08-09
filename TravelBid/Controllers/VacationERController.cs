@@ -18,7 +18,7 @@ namespace TravelBid.Controllers
             this._context = context; //This injects the context so you can use it across the methods.
         } 
 
-        public IActionResult Index()
+        public IActionResult Index(string vacation)
         {
             if(_context.newvacationrequest.Count()==0)
             {
@@ -29,12 +29,45 @@ namespace TravelBid.Controllers
                 _context.newvacationrequest.AddRange(newrequest);
                
                 _context.SaveChanges();
+            }  
+
+            if(_context.NewVacationerModel.Count()==0)
+            {
+                List<VacationerModel> VacationerModelForm = new List<VacationerModel>();
+
+                VacationerModelForm.Add(new VacationerModel
+                {
+                    ID = 1,
+                    FirstName = "Andie",
+                    LastName = "Richards",
+                    email = "ARichards@someemail.com",
+                    DreamDestination = "Boston,MA",
+                    budget = 2900.00,
+                    DestinationDescription = "I am looking for and agent to help plan my Boston vacation."
+                });
+
+                _context.NewVacationerModel.AddRange(VacationerModelForm);
+
+                _context.SaveChanges();
+            }            
+
+            ViewBag.selectedVacation = vacation;
+
+            List<VacationerModel> model;
+
+            if(string.IsNullOrEmpty(vacation))
+            {
+                model = this._context.NewVacationerModel.ToList(); // <=This replaces the select * from.... If the user does not select anything, this will return everything.
             } 
 
-            var model = _context.newvacationrequest.ToList(); //This replaces the select * from ....
+            else
+            {
+                model = this._context.NewVacationerModel.Where(x => x.VacationerModelFK == vacation).ToList(); //This is if the user chooses a place to go (perhaps from a drop-down list?). Side note: This works only for a DROP-DOWN list. If I do not have a drop-down list, I would have to do somehting different. 
+            }
 
             return View(model);
         }
+
 
         public IActionResult NewVacationerRegistration()
         {
@@ -50,9 +83,9 @@ namespace TravelBid.Controllers
 
             else
             {
-                return Content("Wrong!!!");
+                //return Content("Wrong!!!");
 
-                //return RedirectToAction("index", "Home");
+                return RedirectToAction("Index", "Home");
             }                            
         }
 
@@ -60,7 +93,7 @@ namespace TravelBid.Controllers
         
         public IActionResult Confirmation(string CustomerFirstName, string CustomerLastName, string Email, string destination, double maxbudget, string additionalInfo)
         {
-            /*
+            
             VacationerProfile.Add(new VacationerModel {
                 FirstName = CustomerFirstName,
                 LastName = CustomerLastName,
@@ -68,18 +101,9 @@ namespace TravelBid.Controllers
                 DreamDestination = destination,
                 DestinationDescription = additionalInfo,
                 budget = maxbudget
-            });
-            */
+            });                              
 
-            VacationerProfile.Add(new VacationerModel
-            {
-                FirstName = "Andie",
-                LastName = "Richards",
-                email = "Andie@email.com",
-                DreamDestination = "Boston,Ma",
-                DestinationDescription = "Looking for an agent to help plan my Boston trip",
-                budget = 2900.00
-            });
+            //NOTE: The code with the cookies does two things: it adds the cookie to the cart and at the same time, it adds the products to the cart after the user selects the ite from the dropdown list 
 
             return View(VacationerProfile);
         }
@@ -132,7 +156,7 @@ namespace TravelBid.Controllers
             return View(ProfileForSubmission);           
         }
 
-       
+
 
         /*
         PersonalInfoVacationer newVacationer = new PersonalInfoVacationer(1, "Jamie", "Smythe", "JamieSmythe@email.com");
@@ -149,5 +173,10 @@ namespace TravelBid.Controllers
 
         } 
         */
+
+        /* This will add the entire cart in, but will not update the cart. It basically "dumps" the cart and returns a new cart.*/
+
+
+      
     }
 }

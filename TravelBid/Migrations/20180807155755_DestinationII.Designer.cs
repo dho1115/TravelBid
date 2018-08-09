@@ -11,9 +11,10 @@ using TravelBid.Data;
 namespace TravelBid.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180807155755_DestinationII")]
+    partial class DestinationII
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -230,17 +231,11 @@ namespace TravelBid.Migrations
 
                     b.Property<string>("DestinationDescription");
 
-                    b.Property<string>("DestinationRequestNamename");
-
                     b.Property<string>("DreamDestination");
-
-                    b.Property<string>("VacationDetailsName");
 
                     b.Property<double>("budget");
 
                     b.HasKey("id");
-
-                    b.HasIndex("DestinationRequestNamename");
 
                     b.ToTable("newvacationrequest");
                 });
@@ -258,8 +253,6 @@ namespace TravelBid.Migrations
 
                     b.Property<string>("LastName");
 
-                    b.Property<string>("VacationerModelFK");
-
                     b.Property<double>("budget");
 
                     b.Property<string>("email");
@@ -267,24 +260,6 @@ namespace TravelBid.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("NewVacationerModel");
-                });
-
-            modelBuilder.Entity("TravelBid.Models.VacationSuggestions", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Attractions");
-
-                    b.Property<string>("BestTimeToGo");
-
-                    b.Property<string>("DestinationName");
-
-                    b.Property<string>("image");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("ReturnVacations");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -330,13 +305,6 @@ namespace TravelBid.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("TravelBid.Models.VacationDetails", b =>
-                {
-                    b.HasOne("TravelBid.Models.DestinationRequest", "DestinationRequestName")
-                        .WithMany("DestRequests")
-                        .HasForeignKey("DestinationRequestNamename");
                 });
 #pragma warning restore 612, 618
         }

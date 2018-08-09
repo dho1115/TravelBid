@@ -11,6 +11,9 @@ namespace TravelBid.Models
         public string DreamDestination { get; set; }
         public string DestinationDescription { get; set; }
         public double budget { get; set; }
+        public DestinationRequest DestinationRequestName { get; set; }
+
+        public string VacationDetailsName { get; set; } //Optionally, include a key lookup column here.
 
         public VacationDetails()
         {
